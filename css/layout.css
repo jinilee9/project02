@@ -5,7 +5,7 @@
 body, html {
     width: 100%;
     height: 100%;
-    min-width: 360px;
+    min-width: 390px;
     -webkit-text-size-adjust: none;
     -moz-text-size-adjust: none;
     -ms-text-size-adjust: none;
@@ -28,7 +28,7 @@ body {
     width: 100%;
     min-height: 100%;
     font-size: 1.6rem;
-    line-height: 1.2;
+    line-height: 1.4;
     letter-spacing: -0.02rem;
     color: #222;
     overflow-x: hidden;
@@ -47,7 +47,6 @@ body {
     --main-color: #D97652;
     --light-color: #F2E9D8;
     --white-color: #fff;
-    /* --font-md: 1.6rem; */
     --font-lg: 3.6rem;
     --font-xl: 4.8rem;
     --border-R30: 3rem;
@@ -70,12 +69,10 @@ body {
     background-color: var(--main-color);
     border-radius: 4rem;
     color: var(--white-color);
-    min-width: 140px;
-    min-height: 50px;
     font-weight: 700;
     font-size: 1.6rem;
+    text-align: center;
 }
-
 
 .container{
     position: relative;
@@ -225,16 +222,18 @@ section{
     color: var(--light-color);
     margin-top: 1.8rem;
 }
-.subscribe-input{
+.subscribe-input {
     position: relative;
     background-color: var(--white-color);
     border-radius: 6rem;
     padding: 0.5rem 0.5rem 0.5rem 2.8rem;
+    max-width: 530px;
+    width: 100%;
+}
+.input-cont {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 530px;
-    width: 100%;
 }
 .ico-mail{
     display: inline-block;
@@ -333,6 +332,8 @@ footer{
     top: 0;
     left: 50%;
     transform: translateX(-50%);
+    background-color: var(--light-color);
+    z-index: 9999;
 }
 .modal-cont{
     background: url(../img/modal-bg-img.png) no-repeat left top / 100%;
@@ -396,6 +397,8 @@ footer{
 .mlink-list li+li{
     margin-top: 1.6rem;
 }
+
+/* 반응형 미디어쿼리 */
 @media  screen and (max-width:1280px) {
     .header-cont, footer .inner{
         padding: 0 2rem;
@@ -408,7 +411,7 @@ footer{
         padding: 0 3.2rem;
     }
 }
-@media  screen and (max-width:390px){
+@media  screen and (max-width:768px){
     .menus-list{
         display: none;
     }
@@ -421,6 +424,9 @@ footer{
         align-items: center;
         padding-top: 11.6rem;
     }
+    .btn{
+        padding: 11px 24px;
+    }
     .btn-menu-mo{
         display: block;
     }
@@ -432,15 +438,12 @@ footer{
     }
     .main-txt{
         text-align: center;
-        width: 100%;
         padding-top: 0;
+        width: 100%;
     }
     .main-txt *:not(:first-child){
         margin-top: 3rem;
     }
-    /* .btn{
-        padding:1.1rem 2.4rem;
-    } */
     .main-img{
         width: 197px;
         height: 442px;
@@ -483,12 +486,13 @@ footer{
         width: 260px;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.25);
     }
-    .cont02-link{
-            margin-top: 6rem;
-                flex-direction: column;
-                padding: 0;
-                gap: 3rem;
+    .cont02-link {
+        margin-top: 6rem;
+        flex-direction: column;
+        padding: 0;
+        gap: 3rem;
     }
+
     .cont02-link .btn {
         align-self: flex-end;
     }
@@ -502,12 +506,16 @@ footer{
     .subscribe-cont {
         flex-direction: column;
     }
+    .subscribe-txt {
+        width: 100%;
+    }
     .subscribe-txt p:nth-child(2) {
         margin-top: 2rem;
     }
     .subscribe-input {
         margin-top: 3rem;
         position: unset;
+        max-width: 100%;
     }
     .subscribe-input .btn{
         position: absolute;
@@ -543,5 +551,36 @@ footer{
     .btn-top {
         display: none;
     }
+    .social-link{
+        gap: 1.6rem;
+    }
+    .modal{
+        height: 300px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2) ;
+    }
+    .modal-cont{
+        padding: 4rem 0 3rem;
+    }
+    .modal-cont img{
+        width: 60px;
+        height: 62px;
+    }
+}
 
+@media screen and (max-width:480px) {
+    .main-txt {
+        max-width: 280px;
+        width: 100%;
+    }
+    .subscribe-input{
+        padding: 1.1rem 1.6rem;
+    }
+    .ico-mail{
+        width: 18px;
+        height: 18px;
+    }
+    .subscribe-input input{
+        padding-left: 1.4rem;
+        font-size: 1.2rem;
+    }
 }
